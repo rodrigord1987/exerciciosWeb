@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+[wm-flappy]{
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 800px;
+    width: 1200px;
+    margin: 5px;
+    background-color: deepskyblue;
+    overflow: hidden;/*tudo que estiver fora da div não exibir*/
+}
+
+.passaro{
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 590px);
+    bottom: 40%;
+}
+
+.par-de-barreiras{
+    position: absolute;
+    padding: 19px;
+    bottom: 2,5%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira{
+    display: flex;
+    padding: 80px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border: 2px solid #000;
+}
+
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.progresso{
+    position: absolute;
+    top:  100px;
+    right: -410px;
+    font-family: Pixel;
+    font-size: 70px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #04</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+                <option value="pt-br">Português (Brasil)</option>
+                <option value="en-us">Inglês (Americano)</option>
+            </select>
+        <button wm-submit>Pesquisar</button>
+    </form>
+    <script>
+        // const submit = document.querySelector('[wm-submit]')
+        // submit.onclick = function(e){
+        //     e.preventDefault() //intercepta o evento
+
+        //     const form = e.target.parentNode //pega os componentes do formulario onde possui o botão
+        //     const formData = new FormData(form) 
+        //     formData.append('onclick',true) //como adicionar um campo com valor no formulário
+        //     console.log(formData.get('q')) //como capturar um valor do formulário
+        //     console.log(formData.has('hl')) //como verificar se true ou false de um campos do formulário
+
+        //     for (let dado of formData){ //percorre o formulário listando os valores dos campos do fomulário
+        //         console.log(dado)
+        //         if(formData.get('q') == 'teste'){
+        //             console.log('digitou teste onclick')
+        //         }
+        //     }
+        // }
+
+        const form = document.forms[0]
+        form.onsubmit = function(e){
+            e.preventDefault() //intercepta o evento
+
+            const form = e.target //pega os componentes do formulario onde possui o botão
+            const formData = new FormData(form) 
+            formData.append('onsubmit',true) //como adicionar um campo com valor no formulário
+            console.log(formData.get('q')) //como capturar um valor do formulário
+            console.log(formData.has('hl')) //como verificar se true ou false de um campos do formulário
+
+            for (let dado of formData){ //percorre o formulário listando os valores dos campos do fomulário
+                console.log(dado)
+                if(formData.get('q') == 'teste'){
+                    console.log('digitou teste onsubmit')
+                }
+            }
+        }
+    </script>
+</body>
